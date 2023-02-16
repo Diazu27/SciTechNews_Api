@@ -18,4 +18,4 @@ const PostSchema = new Schema<IPost>({
     postDate: { type: Date, default: new Date() }
 });
 
-export const PostModel = model<IPost>('Post', PostSchema, 'Post');
+export const Post = model<IPost>('Post', PostSchema, 'Post');
