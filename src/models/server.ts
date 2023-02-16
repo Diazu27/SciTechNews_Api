@@ -1,6 +1,7 @@
 import Express  from "express"
 import { connectDB } from "../db/connection";
 import { UserRoutes } from "../routes/UserRoutes";
+import { PostRoutes } from '../routes/PostRoutes';
 
 export class ServerAPI {
     private PORT;
@@ -23,7 +24,8 @@ export class ServerAPI {
     }
 
     private routes(){
-        this.app.use("/user",UserRoutes)
+        this.app.use("/user",UserRoutes);
+        this.app.use("/post",PostRoutes);
     }
 
     startServer(){
