@@ -26,6 +26,9 @@ export class ServerAPI {
     private routes(){
         this.app.use("/user",UserRoutes);
         this.app.use("/post",PostRoutes);
+        this.app.use("/like",PostRoutes);
+        this.app.use("/category",PostRoutes);
+        this.app.use("/comment",PostRoutes);
     }
 
     startServer(){
