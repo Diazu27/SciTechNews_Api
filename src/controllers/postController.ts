@@ -2,8 +2,7 @@ import { Post } from "../models/postModel";
 
 export const getPost = async(req, res)=>{
     const postData = await Post.find();
-    res.status(200).json(postData, {Prueba:"d"})
-
+    res.status(200).json({msg:"Successful",postData})
 }
 
 export const savePost = async(req, res)=>{
