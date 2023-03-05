@@ -16,7 +16,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
-    "test": "jest",
+    "tsc": "tsc",
     "start": "node build/index.js"
   },
   "keywords": [],
