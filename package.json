@@ -2,7 +2,7 @@
   "name": "scitechnews_api",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
