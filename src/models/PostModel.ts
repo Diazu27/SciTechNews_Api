@@ -4,6 +4,7 @@ import { Schema, model, Date } from 'mongoose';
 export interface IPost {
     title:string,
     content:string,
+    imageUrl:String,
     creatorID: string,
     Categories: string[];
     postDate: Date
@@ -13,6 +14,7 @@ export interface IPost {
 const PostSchema = new Schema<IPost>({
     title:{ type: String, required: true },
     content:{ type: String, required: true },
+    imageUrl:{ type: String, required: true },
     creatorID: { type: String, required: true },
     Categories: { type:[{type: String}], required: true },
     postDate: { type: Date, default: new Date() }
