@@ -23,7 +23,7 @@ var Comment;
 if (models.Comment) {
   Comment = model<IComment>('Comment');
 } else {
-  Comment = model<IComment>('Comment', CommentSchema);
+  Comment = model<IComment>('Comment', CommentSchema,'Comment');
 }
 
 
