@@ -12,4 +12,4 @@ const CategoriesSchema = new Schema<ICategories>({
     postDate: { type: Date, default: new Date() }
 });
 
-export const Category = model<ICategories>('Comment', CategoriesSchema, 'Comment');
+export const Category = model<ICategories>('Category', CategoriesSchema, 'Category');

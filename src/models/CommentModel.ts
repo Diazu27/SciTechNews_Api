@@ -18,13 +18,4 @@ const CommentSchema = new Schema<IComment>({
     postDate: { type: Date, default: new Date() }
 });
 
-var Comment;
-
-if (models.Comment) {
-  Comment = model<IComment>('Comment');
-} else {
-  Comment = model<IComment>('Comment', CommentSchema,'Comment');
-}
-
-
-export default Comment
+export const Comment = model<IComment>('Comment', CommentSchema,'Comment');
