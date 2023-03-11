@@ -1,10 +1,13 @@
 import Express  from "express"
+import cors from 'cors'
+
 import { connectDB } from "../db/connection";
 import { UserRoutes } from "../routes/UserRoutes";
 import { PostRoutes } from '../routes/PostRoutes';
 import { LikeRoutes } from "../routes/LikeRoutes";
 import { CategoryRoutes } from "../routes/CategoryRoutes";
 import { CommentRoutes } from "../routes/CommentRoutes";
+
 
 export class ServerAPI {
     private PORT;
@@ -24,6 +27,7 @@ export class ServerAPI {
 
     private middlewares(){
         this.app.use(Express.json())
+        this.app.use(cors())
     }
 
     private routes(){
