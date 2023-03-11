@@ -12,7 +12,7 @@ export const postCategories = async(req, res)=>{
         const Categorydata = new Category(req.body);
         await Categorydata.save();
 
-        res.status(200).json({msg:"Successful",Categorydata})
+        res.status(200).json(Categorydata)
 
     }catch(error){
         res.status(400).json({error: error})
@@ -22,7 +22,7 @@ export const postCategories = async(req, res)=>{
 export const UpdateCategory =async (req, res) => {
     try{
         const Categorydata = await Category.updateOne({_id: req.params.id}, {$set:req.body})
-        res.status(200).json({msg:"Successful",Categorydata})
+        res.status(200).json(Categorydata)
 
     }catch(error){
         res.status(400).json({error: error})
@@ -38,7 +38,7 @@ export const getCategoryById =async (req, res) => {
 export const DeleteCategory = async (req, res) => {
     try{
         const Categorydata = await Category.deleteOne({_id: req.params.id})
-        res.status(200).json({msg:"Deleteed successful",Categorydata})
+        res.status(200).json(Categorydata)
 
     }catch(error){
         res.status(400).json({error: error})

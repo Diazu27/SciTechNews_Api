@@ -12,7 +12,7 @@ export const postUsers = async(req, res)=>{
         const userdata = new User(req.body);
         await userdata.save();
 
-        res.status(200).json({msg:"Successful",userdata})
+        res.status(200).json(userdata)
 
     }catch(error){
         res.status(400).json({error: error})
@@ -22,7 +22,7 @@ export const postUsers = async(req, res)=>{
 export const UpdateUser =async (req, res) => {
     try{
         const userdata = await User.updateOne({_id: req.params.id}, {$set:req.body})
-        res.status(200).json({msg:"Successful",userdata})
+        res.status(200).json(userdata)
 
     }catch(error){
         res.status(400).json({error: error})
@@ -38,7 +38,7 @@ export const getUserById =async (req, res) => {
 export const DeleteUser = async (req, res) => {
     try{
         const userdata = await User.deleteOne({_id: req.params.id})
-        res.status(200).json({msg:"Deleteed successful",userdata})
+        res.status(200).json(userdata)
 
     }catch(error){
         res.status(400).json({error: error})
