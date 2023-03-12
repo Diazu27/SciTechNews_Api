@@ -46,6 +46,12 @@ export const DeleteUser = async (req, res) => {
 }
 
 export const AuthUser =async (req, res) => {
-    const userData = await User.find({email:req.body.email, password:req.body.password});
-    res.status(200).json({auth:true, userData})
+    const userData = await User.find({email:req.body.email, password:req.body.password}).count();
+    if(userData == 1){
+        res.status(200).json({auth:true})
+    }else{
+        res.status(400).json({auth:false})
+    }
+    
+    
 }
