@@ -44,3 +44,8 @@ export const DeleteUser = async (req, res) => {
         res.status(400).json({error: error})
     }
 }
+
+export const AuthUser =async (req, res) => {
+    const userData = await User.find({email:req.body.email, password:req.body.password});
+    res.status(200).json({auth:true, userData})
+}

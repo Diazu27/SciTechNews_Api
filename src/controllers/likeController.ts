@@ -45,3 +45,9 @@ export const DeleteLike = async (req, res) => {
         res.status(400).json({error: error})
     }
 }
+
+export const getLikeCountByPostID =async (req, res) => {
+    const LikeData = await Like.find({PostID:req.params.PostID}).count();
+    res.status(200).json(LikeData)
+}
+

@@ -44,3 +44,13 @@ export const DeleteComment = async (req, res) => {
         res.status(400).json({error: error})
     }
 }
+
+export const getCommentByPostID =async (req, res) => {
+    const CommentData = await Comment.find({PostID:req.params.PostID});
+    res.status(200).json(CommentData)
+}
+
+export const getCommentCountByPost =async (req, res) => {
+    const CommentData = await Comment.find({PostID:req.params.PostID}).count();
+    res.status(200).json(CommentData)
+}
