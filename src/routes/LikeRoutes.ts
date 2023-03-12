@@ -4,7 +4,7 @@ import Express  from "express";
 export const LikeRoutes = Express.Router();
 
 LikeRoutes.get('/', getLikes)
-LikeRoutes.get('/LikeCount/:id', getLikeCountByPostID)
+LikeRoutes.get('/LikeCount/:PostID', getLikeCountByPostID)
 LikeRoutes.get('/:id', getLikeById)
 LikeRoutes.post('/', postLikes)
 LikeRoutes.put('/:id', UpdateLike)
