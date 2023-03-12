@@ -50,7 +50,7 @@ export const AuthUser =async (req, res) => {
     if(userData == 1){
         res.status(200).json({auth:true})
     }else{
-        res.status(400).json({auth:false})
+        res.status(200).json({auth:false})
     }
     
     
