@@ -1,4 +1,4 @@
-import { getLikes, getLikeById,UpdateLike, DeleteLike, postLikes, getLikeCountByPostID, getUserLike } from './../controllers/likeController';
+import { getLikes, getLikeById,UpdateLike, DeleteLike, postLikes, getLikeCountByPostID, getUserLike, getLikeByUserPost } from './../controllers/likeController';
 import Express  from "express";
 
 export const LikeRoutes = Express.Router();
@@ -6,6 +6,7 @@ export const LikeRoutes = Express.Router();
 LikeRoutes.get('/', getLikes)
 LikeRoutes.get('/LikeCount/:PostID', getLikeCountByPostID)
 LikeRoutes.get('/:id', getLikeById)
+LikeRoutes.get('/LikeData', getLikeByUserPost)
 LikeRoutes.post('/isLiked',getUserLike)
 LikeRoutes.post('/', postLikes)
 LikeRoutes.put('/:id', UpdateLike)
