@@ -6,7 +6,7 @@ export const LikeRoutes = Express.Router();
 LikeRoutes.get('/', getLikes)
 LikeRoutes.get('/LikeCount/:PostID', getLikeCountByPostID)
 LikeRoutes.get('/:id', getLikeById)
-LikeRoutes.get('/LikeData', getLikeByUserPost)
+LikeRoutes.post('/LikeData', getLikeByUserPost)
 LikeRoutes.post('/isLiked',getUserLike)
 LikeRoutes.post('/', postLikes)
 LikeRoutes.put('/:id', UpdateLike)
