@@ -51,3 +51,8 @@ export const getLikeCountByPostID =async (req, res) => {
     res.status(200).json(LikeData)
 }
 
+
+export const getUserLike =async (req, res) => {
+    const LikeData = await Like.find({UserID:req.body.UserID, PostID:req.body.PostID}).count();
+    if(LikeData>0) {res.status(200).json({isLiked:true})} else res.status(200).json({isLiked:false});
+}
